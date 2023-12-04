@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import Loader from '../components/Loader';
+import UserBox from './components/UserBox';
 
 const page = () => {
   const { user } = useAuth();
@@ -19,11 +20,11 @@ const page = () => {
   }, [user]);
 
   return (
-    <div className="flex items-center">
+    <div className="flex items-center justify-center my-24">
       {loading ? (
         <Loader />
       ) : user ? (
-        <h1>Hello Welcome to News App - {user.displayName}</h1>
+        <UserBox user={user} />
       ) : (
         <p>This is Protected Route</p>
       )}

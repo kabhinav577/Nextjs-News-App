@@ -37,16 +37,18 @@ const Navbar: React.FC<NavbarProps> = () => {
   }, [user]);
 
   return (
-    <div className="h-20 w-full border-b-2 flex items-center justify-between p-2">
+    <div className="h-20 w-full text-gray-200 border-b-2 flex items-center justify-between p-4">
       {loading && <Loader />}
       <ul className="flex">
-        <li className="p-2 cursor-pointer">
+        <li className="p-2 cursor-pointer hover:text-gray-300">
           <Link href="/">Home</Link>
         </li>
-        <li className="p-2 cursor-pointer">
-          <Link href="/profile">Profile</Link>
+
+        <li className="p-2 cursor-pointer hover:text-gray-300">
+          <Link href="/favourite">Favourite</Link>
         </li>
-        <li className="p-2 cursor-pointer">
+
+        <li className="p-2 cursor-pointer hover:text-gray-300">
           <Link href="/about">About</Link>
         </li>
       </ul>
@@ -62,8 +64,8 @@ const Navbar: React.FC<NavbarProps> = () => {
         </ul>
       ) : (
         <div className="flex gap-2">
-          <p>Welcome , {user?.displayName}</p>
-          <p onClick={handleSignOut} className="cursor-pointer">
+          <Link href="/profile">Welcome, {user.displayName}</Link>
+          <p onClick={handleSignOut} className="cursor-pointer text-red-500">
             Sign Out
           </p>
         </div>
