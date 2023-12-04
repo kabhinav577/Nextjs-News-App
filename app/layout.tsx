@@ -1,5 +1,3 @@
-'use client';
-
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
@@ -7,7 +5,7 @@ import Navbar from './components/Navbar';
 import { AuthContextProvider } from './context/AuthContext';
 
 const inter = Inter({ subsets: ['latin'] });
-const metadata: Metadata = {
+export const metadata: Metadata = {
   title: 'News App',
   description: 'News App',
 };
