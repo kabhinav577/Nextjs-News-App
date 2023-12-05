@@ -1,5 +1,5 @@
 // app/stores/newsStore.js
-import create, { State, SetState } from 'zustand';
+import { create, State, SetState } from 'zustand';
 
 interface NewsItem {
   title: string;
