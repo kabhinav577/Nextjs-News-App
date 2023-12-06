@@ -21,7 +21,8 @@ const useNewsStore = create<NewsStoreState>(
     fetchNews: async () => {
       try {
         const apiKey = process.env.NEXT_PUBLIC_NEWS_API_KEY;
-        const apiUrl = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}`;
+        // const topHeadlineUrl = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}`;
+        const apiUrl = `https://newsapi.org/v2/everything?q=technology&apiKey=${apiKey}`;
         const response = await fetch(apiUrl);
         const data = await response.json();
 
