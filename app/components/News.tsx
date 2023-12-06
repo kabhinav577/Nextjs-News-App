@@ -8,6 +8,7 @@ import Loader from './Loader';
 const News = () => {
   const { news, fetchNews } = useNewsStore();
   const [loading, setLoading] = useState(false);
+  // console.log(news);
 
   useEffect(() => {
     setLoading(true);

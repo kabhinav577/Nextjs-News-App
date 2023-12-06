@@ -18,11 +18,11 @@ const page = () => {
   };
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-between p-4 md:p-8 lg:p-12 xl:p-16">
+    <div className="flex min-h-screen flex-col items-center justify-between p-8 lg:p-8 xl:p-12">
       {!user ? (
         <EmpytState />
       ) : (
-        <div className="container mx-auto my-4 md:w-">
+        <div className="container mx-auto my-4 md:w-full">
           <div className="flex justify-end mb-4">
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
@@ -33,14 +33,14 @@ const page = () => {
           </div>
 
           <div
-            className={`grid gap-8 ${
-              isGridView ? 'grid-cols-1' : 'grid-cols-2'
+            className={`my-4 grid gap-8 ${
+              isGridView ? 'grid-cols-1' : 'md:grid-cols-2 grid-cols-1'
             }`}
           >
             {favorites.map((article: any, i: any) => (
               <div
                 key={i}
-                className="bg-gray-800 border border-gray-700 flex flex-col gap-2 p-4 rounded-md shadow"
+                className="bg-gray-800 border border-gray-700 rounded-md shadow"
               >
                 <div>
                   <img
@@ -49,13 +49,12 @@ const page = () => {
                         ? '/images/placeholder.webp'
                         : article.urlToImage
                     }
-                    width={250}
-                    height={250}
+                    className="rounded-t-md object-contain"
                     alt="Article Image"
                   />
                 </div>
 
-                <div className="flex flex-col gap-2">
+                <div className="flex flex-col gap-2 my-4 px-6">
                   <h2 className="text-xl text-neutral-200 font-bold mb-2">
                     {article.title}
                   </h2>
